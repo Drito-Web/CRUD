@@ -9,7 +9,6 @@ body {
   align-items: center;
 }
 .title {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 700;
   font-size: 36px;
   color: #333;
@@ -75,7 +74,7 @@ button:active {
 
 /* Tabla responsiva */
 table {
-  width: 90%;
+  width: 84%;
   border-collapse: collapse;
   background-color: white;
   border-radius: 8px;
