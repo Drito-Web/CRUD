@@ -16,11 +16,10 @@
     </div>
 
     <h1 class="title">Gestión de Usuarios</h1>
-
     <form id="formUsuario">
       <input type="text" id="nombre" placeholder="Nombre" required />
       <input type="email" id="correo" placeholder="Correo" required />
-      <input type="tel" id="telefono" placeholder="Teléfono" required />
+      <input type="tel" id="telefono" placeholder="Teléfono" minlength="9" maxlength="9" required />
       <input type="text" id="cargo" placeholder="Cargo" required />
       <button type="submit">Guardar Usuario</button>
     </form>
