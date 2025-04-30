@@ -1,6 +1,8 @@
 const form = document.getElementById('formUsuario');
 const cuerpoTabla = document.getElementById('cuerpoTabla');
 let indiceEditando = null;
+let edata = document.querySelector('.eData');
+
 
 
 let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
@@ -14,11 +16,11 @@ function renderUsuarios() {
   usuarios.forEach((usuario, index) => {
     const fila = document.createElement('tr');
     fila.innerHTML = `
-      <td>${usuario.nombre}</td>
-      <td>${usuario.correo}</td>
-      <td>${usuario.telefono}</td>
-      <td>${usuario.cargo}</td>
-    <td>
+      <td class="acciones">${usuario.nombre}</td>
+      <td class="acciones">${usuario.correo}</td>
+      <td class="acciones">${usuario.telefono}</td>
+      <td class="acciones">${usuario.cargo}</td>
+    <td class="acciones">
         <button onclick="editarUsuario(${index})"><i class="fas fa-edit"></i></button>
         <button onclick="eliminarUsuario(${index})"><i class="fas fa-trash-alt"></i></button>
         <button onclick="mostrarQR(${index})"><i class="fas fa-qrcode"></i></button>
@@ -28,6 +30,16 @@ function renderUsuarios() {
     cuerpoTabla.appendChild(fila);
   });
 }
+
+function currentDate() {
+  const fecha = new Date();
+  const dia = String(fecha.getDate()).padStart(2, '0');
+  const mes = String(fecha.getMonth() + 1).padStart(2, '0');
+  const anio = fecha.getFullYear();
+  edata.innerHTML = `Fecha:${dia}/${mes}/${anio}.`;
+    
+} 
+currentDate();
 
 form.addEventListener('submit', e => {
     e.preventDefault();

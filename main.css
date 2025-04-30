@@ -91,14 +91,18 @@ table {
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   margin-bottom: 40px;
 }
-
-th, td {
+.acciones {
   padding: 12px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ddd;
+  &:hover {
+    transform: translate(0, -2px);
+  }
 }
-td:hover {
-  transform: translate(0, -2px);
+
+.bannerInfo {
+  display: flex;
+  align-items: center;
 }
 
 th {
